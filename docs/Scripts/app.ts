@@ -602,6 +602,8 @@
                  $(this).closest("li").remove();
              }    
          });
+
+         AddNavigationEvents();
      }
 
     /**
