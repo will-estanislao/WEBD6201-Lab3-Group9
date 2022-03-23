@@ -120,6 +120,7 @@
             AddNavigationEvents();
             
             CheckLogin();
+
         });
     }
 
@@ -403,7 +404,16 @@
             $("#login").html(
                 `<a id="logout" class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>`
             );
+
+            $("#tasklist").remove(); // Remove existing task list if there is one to avoid dupes
+            // Add in task-list to the nav bar
+           $("#login").before(
+            `<li class="nav-item" id="tasklist"><a class="nav-link" data="task-list"><i class="fas fa-list"></i> Task List</a></li>`
+            );
             
+            AddNavigationEvents(); // Connects task-list page with the task list nav link
+            // Actually takes user to page when task list nav link is clicked
+
             $("#logout").on("click", function()
             {
                 // perform logout
@@ -413,6 +423,9 @@
                 $("#login").html(
                     `<a class="nav-link" data="login"><i class="fas fa-sign-in-alt"></i> Login</a>`
                 );
+
+                // Take out task list because user is signed in
+                $("#tasklist").remove();
 
                 AddNavigationEvents();
 
