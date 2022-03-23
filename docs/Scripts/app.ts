@@ -51,8 +51,6 @@
 
         CheckLogin();
 
-        AddNavigationEvents();
-
         LoadContent();
     }
 
