@@ -1,3 +1,11 @@
+/**
+ * FileName: app.ts
+ * Name: Will Estanislao (100786862) & [Name] [StudentNumber]
+ * Date: 23/02/22
+ * Description: The app.ts file that loads the content of the pages and
+ *              sets up the logic, validation or inserts elements for pages.
+ */
+
 // IIFE -- Immediately Invoked Function Expression
 // AKA -- Anonymous Self-Executing Function
 (function()
@@ -5,7 +13,8 @@
     function AuthGuard(): void
     {
         let protected_routes: string[] = [
-            "contact-list"
+            "contact-list",
+            "task-list"
         ];
     
     
@@ -527,7 +536,7 @@
       * This function is the Callback function for the TaskList
       *
       */
-     function DisplayTaskList()
+     function DisplayTaskList() : void
      {
          let messageArea = $("#messageArea");
          messageArea.hide();
