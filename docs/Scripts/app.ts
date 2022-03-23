@@ -407,14 +407,14 @@
 
             $("#tasklist").remove(); // Remove existing task list if there is one to avoid dupes
             // Add in task-list to the nav bar
-           $("#login").before(
-            `<li class="nav-item" id="tasklist"><a class="nav-link" data="task-list"><i class="fas fa-list"></i> Task List</a></li>`
+            $("#login").before(
+                `<li class="nav-item" id="tasklist"><a class="nav-link" data="task-list"><i class="fas fa-list"></i> Task List</a></li>`
             );
             
             AddNavigationEvents(); // Connects task-list page with the task list nav link
-            // Actually takes user to page when task list nav link is clicked
+                                   // Actually takes user to page when task list nav link is clicked
 
-            $("#logout").on("click", function()
+            $("#logout").trigger("click", function()
             {
                 // perform logout
                 sessionStorage.clear();
@@ -602,8 +602,6 @@
                  $(this).closest("li").remove();
              }    
          });
-
-         AddNavigationEvents();
      }
 
     /**
