@@ -51,6 +51,8 @@
 
         CheckLogin();
 
+        AddNavigationEvents();
+
         LoadContent();
     }
 
@@ -414,7 +416,7 @@
             AddNavigationEvents(); // Connects task-list page with the task list nav link
                                    // Actually takes user to page when task list nav link is clicked
 
-            $("#logout").trigger("click", function()
+            $("#login").on("click", function()
             {
                 // perform logout
                 sessionStorage.clear();
